@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>FEEDBACK FORM</title>
+<meta charset="UTF-8">
+<meta name="description" content="Feedback Form | Kosuku">
+<meta name="keywords" content="kosuku, feedback form">
+<meta name="author" content="Kosuku">
+<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<style>
+  body {
+    margin: 0;
+    padding: 0;
+    background: #181316; 
+    font-family: 'Roboto', sans-serif;
+    color: #FAFAFA; 
+  }
+
+  .content {
+    padding: 40px 60px;
+  }
+
+  h1 {
+    color: #33160e; 
+    font-size: 30px;
+    text-align: justify;
+    margin-bottom: 10px;
+  }
+
+  h2 {
+    font-size: 25px;
+    color: #7a211e;
+    text-align: justify; 
+    margin: 15px 0;
+  }
+
+  h3 {
+    font-size: 22.5px;
+    color: #33160e; 
+    margin: 15px 0 5px 0;
+    line-height: 1.4; 
+  }
+
+  .box {
+    background-color: #2da986;
+    border: 2px solid #fafafa;
+    padding: 10px;
+    display: block;
+    margin: 20px 20px 40px 20px;
+    border-radius: 5px;
+    max-width: 25cm;
+    max-height: 30cm;
+  }
+
+  input, textarea {
+    width: 100%;
+    max-width: 10cm;
+    max-height: 4cm; 
+    padding: 8px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    border: none;
+  }
+
+  .form-container {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+
+  .form-box {
+    flex: 1 1 60%;
+  }
+
+  .gif-box {
+    flex: 1 1 35%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .gif-box img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+  }
+
+input[type=submit], input[type=reset] {
+background-color: #225a4b;
+border: none;
+color: #42f5c2;
+padding: 15px;
+text-align: center;
+text-decoration: none;
+display: inline-block;
+font-size: 20px;
+font-weight: bold;
+margin: 10px 20px 10px 10px;
+border-radius: 8px;
+width: 25%;
+cursor: pointer;
+transition-duration: 0.2s;
+}
+
+input[type=submit]:hover, input[type=reset]:hover {
+background-color: #7a211e;
+color: white;
+}
+</style>
+</head>
+<body>
+
+<div class="form-container">
+<div class="form-box">
+<div class="box">
+<h1><strong><b>Feedback Form</b></strong></h1>
+<h2>Any feedback you want to send our way? Send it here! Kosuku is always looking for ways we can improve, and we would be glad to hear any constructive criticism. You are also welcome to send in positive feedback regarding our services so we can be sure to maintain it and continue in our strengths.</h2>
+
+<form action="https://formspree.io/f/xjkryzow" method="POST">
+<h3><label for="name">Name‌:</label></h3>
+<input type="text" id="name" name="name" required>
+
+<h3><label for="age">Age:</label></h3>
+<input type="number" id="age" name="Age" required>
+
+<h3><label for="email">Email:</label></h3>
+<input type="email" id="email" name="Email" required>
+<br>
+<h3><label>Gender: </label>
+<h3><label for="male">Male</label><input type="radio" id="male" name="gender" value="Male">
+<h3><label for="female">Female</label><input type="radio" id="female" name="gender" value="Female">
+<br>
+<h3><label for="notes">Comment:</label></h3>
+<textarea id="comment" name="comment" rows="5" cols="60"></textarea>
+<br>
+<input type="submit" value="Send">
+<input type="reset" value="Reset">
+</form>
+</div>
+</div>
+
+  <div class="gif-box">
+  <img src="formdeco.gif">
+  </div>
+</div>
+
+<footer>
+©2025 Kosuku | All Rights Reserved<br>
+Last updated: 29 June 2025<br>
+Best viewed on a PC browser<br>
+This website is fake and made for learning purposes only.<br>
+Kosuku and the information on this website is not real.
+</footer>
+</body>
+</html>
+
+
