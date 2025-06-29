@@ -25,14 +25,7 @@
   .content {
     padding: 40px 60px;
     background-color: #181316; 
-    position: relative; 
-    animation: load 1.3s;
   }
-
-@keyframes load {
-  0% {top: 300px;}
-  100% {top: 0;}
-}
 
   h1 {
     color: #fafafa; 
