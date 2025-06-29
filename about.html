@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>ABOUT US</title>
+<meta charset="UTF-8">
+<meta name="description" content="About | Kosuku">
+<meta name="keywords" content="kosuku, about">
+<meta name="author" content="Kosuku">
+<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<style>
+  body {
+    margin: 0;
+    padding: 0;
+    background: #181316; 
+    font-family: 'Roboto', sans-serif;
+    color: #fafafa; 
+    background-image: url('images/notesmusic.png');
+    background-size: contain;
+  }
+
+  .header-img {
+    width: 100%;
+    height: 50vh;
+    object-fit: cover;
+    display: block;
+  }
+
+  .content {
+    padding: 40px 60px;
+    background-color: #181316; 
+  }
+
+  h1 {
+    color: #fafafa; 
+    font-size: 36px;
+    text-align: center;
+    margin-bottom: 30px;
+    margin-top: 20px;
+  }
+
+  h2 {
+    font-size: 22px;
+    color: #fafafa; 
+    margin: 15px 0;
+    text-align: justify;
+    line-height: 1.5;
+  }
+
+  .info-box {
+    background-color: #7a211e;
+    border: 2px solid #2da986;
+    border-radius: 20px;
+    padding: 30px;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  .audio-box {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #181316;
+    border-radius: 10px;
+    padding: 5px 10px;
+    z-index: 9999;
+  }
+
+  .audio-box audio {
+    filter: invert(0%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(90%) contrast(85%);
+  }
+
+  h1, .info-box {
+    position: relative; 
+    animation: load 1.3s;
+  }
+
+  @keyframes load {
+    0% {top: 300px;}
+    100% {top: 0px;}
+  }
+
+</style>
+</head>
+<body>
+
+<img src="header.png" class="header-img">
+
+<h1><strong><u><b>About Us</u></b></strong></h1>
+<div class="info-box">
+<center><h2>Kosuku was established in 202x by Mr Mahadi Mahmood, shortly after the COVID-19 pandemic. Seeing the resurgence of interest in physical media among the younger generation now and the passion of experienced collectors, it made us think back to our youth, buying DVDs, records, and using them anytime we wanted while also being able to put it on display. Our nostalgia for the past and the physical is something we wish to share with the old and young of the current era, which brings us to where we are now.
+Currently, our small team of 20 is based in Selangor, Malaysia, working our hardest to ensure everyone is able to get the records they want and to expand our services will be able to encapsulate demands regarding DVDs, CDs and vinyls. We are happy to report that we have garnered a small following and are trusted by many communities out there.
+</center></h2> 
+
+<div class="audio-box">
+  <audio controls autoplay loop>
+    <source src="audio/nintendo.mp3" type="audio/mpeg">
+  </audio>
+</div>
+</div>
+
+<footer>
+©2025 Kosuku | All Rights Reserved<br>
+Last updated: 29 June 2025<br>
+Best viewed on a PC browser<br>
+This website is fake and made for learning purposes only.<br>
+Kosuku and the information on this website is not real.
+</footer>
+</body>
+</html>
+
+

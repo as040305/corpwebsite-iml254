@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="styles.css">
+<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+<meta charset="UTF-8">
+<meta name="description" content="Gallery | Kosuku">
+<meta name="keywords" content="kosuku, gallery">
+<meta name="author" content="Kosuku">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gallery</title>
+
+<style>
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
+}
+
+h1 {
+  font-weight: bold;
+  font-size: 35px;
+  position: relative;
+  margin: 20px;
+  padding: 10px;
+  text-align: center;
+}
+
+h1::before{
+  content: '';
+  position: absolute;
+  width: 100px;
+  height: 3px;
+  background-color:red;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  animation: animate 4s linear infinite;
+}
+
+@keyframes animate{
+   0%{
+       width: 100px;
+   }
+   50%{
+       width: 200px;
+   } 
+   100%{
+       width: 100px;
+   }
+}
+
+section {
+  padding: 20px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin: 20px auto;
+}
+
+section ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+section ul li button {
+  list-style: none;
+  margin: 15px;
+  background: #7a211e;
+  padding: 12px 20px;
+  letter spacing: 1px;
+  cursor: pointer;
+  color: white;
+  border-radius: 5px;
+  border: none;
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+}
+
+li {
+list-style-type: none;
+}
+
+section ul li button:hover {
+  background: #2da986;
+  color: white;
+  transition-duration: 0.3s;
+}
+
+.container, section, .move {
+  position: relative;
+  animation: load 1.3s;
+}
+
+@keyframes load {
+  0% {top: 300px;}
+  100% {top: 0;}
+}
+
+.container {
+ margin-top: 15px;
+}
+
+.product {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+#item {
+width: 20%;
+margin: 20px;
+}
+
+#vintage, #modern, #classic, #portable {
+display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+</style>
+</head>
+
+<body>
+<img src="header.png" class="header-img">
+<div class="container">
+	<h1> Record Player Gallery </h1>
+</div>
+  <section>
+    <ul>
+<li><a href="gallery.html"><button class="list"> All </button></a></li>
+<li><button class="list" onclick="show('vintage')"> Vintage Records</button></li>
+<li><button class="list" onclick="show('modern')"> Modern Records</button></li>
+<li><button class="list" onclick="show('classic')"> Classic Turntable</button></li>
+<li><button class="list" onclick="show('portable')"> Portable Records</button></li>
+    </ul>
+</section>
+
+<div class="move">
+<div class="product" id="vintage">
+<img src="images/vintage1.jpg" id="item">
+<img src="images/vintage2.jpg" id="item">
+<img src="images/vintage3.jpg" id="item">
+</div>
+
+<div class="product" id="modern">
+<img src="images/modern1.jpg" id="item">
+<img src="images/modern2.jpg" id="item">
+<img src="images/modern3.jpg" id="item">
+</div>
+
+<div class="product" id="classic">
+<img src="images/classic1.jpg" id="item">
+<img src="images/classic2.jpg" id="item">
+<img src="images/classic3.jpg" id="item">
+</div>
+
+<div class="product" id="portable">
+<img src="images/portable1.jpg" id="item">
+<img src="images/portable2.jpg" id="item">
+<img src="images/portable3.jpg" id="item">
+</div>
+</div>
+
+<script>
+function show(id) {
+	var i, tabcontent, list;
+	tabcontent = document.getElementsByClassName("product");
+	for (i = 0; i < tabcontent.length; i++) {
+	tabcontent[i].style.display = "none";
+  	}
+	list = document.getElementsByClassName("list");
+	for (i = 0; i < list.length; i++) {
+	list[i].className = list[i].className.replace("active", "");
+  	}
+	document.getElementById(id).style.display = "flex";
+	evt.currentTarget.className += "active";
+}
+</script>
+
+</body>
+</html>

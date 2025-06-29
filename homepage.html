@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>HOME</title>
+<meta charset="UTF-8">
+<meta name="description" content="Kosuku specializes in making and selling vinyl records and (if you're wondering, yes, it's those (usually black) polyvinyl chloride discs that people used back in the 1940s) and many other form of disc-like products.">
+<meta name="keywords" content="disc, vinyl, record, cassette, cds, dvds, store, services, kosuku">
+<meta name="author" content="Kosuku">
+<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<style>
+  body {
+    margin: 0;
+    padding: 0;
+    background: #181316; 
+    font-family: 'Roboto', sans-serif;
+    color: #FAFAFA; 
+  }
+
+  .content {
+    padding: 40px 60px;
+  }
+
+  h1 {
+    color: #fafafa; 
+    font-size: 23px;
+    text-align: left;
+    margin-bottom: 10px;
+  }
+
+  h2 {
+    font-size: 22px;
+    color: #fafafa;
+    text-align: justify; 
+    margin: 15px 0;
+  }
+
+  h3 {
+    font-size: 20px;
+    color: #fafafa; 
+    margin: 0;
+    text-align: justify;
+    line-height: 1.4; 
+  }
+
+  .box {
+    background-color: #7a211e;
+    border: 2px solid #2da986;
+    padding: 15px;
+    display: block;
+    margin: 10px 0 30px 0;
+    width: 900px;
+    border-radius: 8px;
+
+  }
+
+  .audio-box {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #181316;
+    border-radius: 10px;
+    padding: 5px 10px;
+    z-index: 9999;
+  }
+
+  .audio-box audio {
+    filter: invert(0%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(90%) contrast(85%);
+  }
+
+  .button {
+    background-color: #225a4b;
+    border: none;
+    color: #42f5c2;
+    padding: 15px 32px;
+    text-align: left;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    font-weight: bold;
+    margin: 10px 20px;
+    cursor: pointer;
+    border-radius: 8px;
+    transition-duration: 0.2s;
+  }
+
+  .button-container {
+    text-align: left;
+    margin-left: -20px;
+  }
+
+.button:hover {
+background-color:#753c3a;
+color: white;
+}
+
+#cd {
+  animation: spin 2s linear infinite;
+float: right;
+width: 26%;
+height: auto;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+#cd, .box {
+display: inline-block;
+}
+</style>
+</head>
+<body>
+
+<img src="header.png" class="header-img">
+
+<div class="content">
+<div class="box">
+<h1><strong><b>Welcome to Kosuku</b></strong></h1>
+<h3><i>いらっしゃいませ、こすく</i></h3>
+</div>
+
+<img src="images/cd.png" width="100" height="100" id="cd">
+
+<br>
+<div class="box">
+<h2>"A place where wounded hearts are treated with the beauty of melodies!!"</h2>
+<h2>Here we specialize in making and selling vinyl records, and if you're wondering, yes, it's those (usually black) polyvinyl chloride discs that people used back in the 1940s and many other form of disc like products.</h2>
+<h2>This is our first and only official website, where you can order a disc from our only physical store located in Malaysia.</h2>
+</div>
+
+
+<h3><strong> Discover more about Kosuku here:</strong></h3><br>
+<div class="button-container">
+ <a href="about.html"><button class="button">ABOUT US</button></a>
+ <a href="org.html"><button class="button">ORGANIZATION CHART</button></a>
+ <a href="reviews.html"><button class="button">REVIEWS</button></a>
+</div>
+
+<br>
+
+<div class="audio-box">
+  <audio controls autoplay loop>
+    <source src="audio/love.mp3" type="audio/mpeg">
+  </audio>
+</div>
+
+<footer>
+©2025 Kosuku | All Rights Reserved<br>
+Last updated: 29 June 2025<br>
+Best viewed on a PC browser<br>
+This website is fake and made for learning purposes only.<br>
+Kosuku and the information on this website is not real.
+</footer>
+</body>
+</html>

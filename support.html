@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="icon" type="image/png" href="support.png">
+  <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <meta name="description" content="Customer Support | Kosuku">
+  <meta name="keywords" content="kosuku, customer support">
+  <meta name="author" content="Kosuku">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    body {
+      font-family: 'Roboto', sans-serif;
+      background: #fafafa;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    .open-button {
+      background-color: #181316;
+      color: #fafafa;
+      padding: 16px 20px;
+      border: none;
+      cursor: pointer;
+      opacity: 0.8;
+      position: fixed;
+      bottom: 23px;
+      right: 28px;
+      width: 280px;
+    }
+
+    .form-popup {
+      display: none;
+      position: fixed;
+      bottom: 0;
+      right: 15px;
+      border: 3px solid #181316;
+      z-index: 9;
+      background-color: #fafafa;
+      padding: 10px;
+      max-width: 300px;
+    }
+
+    .form-popup input[type="text"] {
+      width: 100%;
+      padding: 15px;
+      margin: 5px 0 22px 0;
+      border: none;
+      background: #f1f1f1;
+    }
+
+    .form-popup input[type="text"]:focus {
+      background-color: #fafafa;
+      outline: none;
+    }
+
+    .form-popup .btn {
+      background-color: #2da986;
+      color: #fafafa;
+      padding: 16px 20px;
+      border: none;
+      cursor: pointer;
+      width: 100%;
+      margin-bottom: 10px;
+      opacity: 0.8;
+    }
+
+    .form-popup .cancel {
+      background-color: #7a211e;
+    }
+
+    .form-popup .btn:hover,
+    .open-button:hover {
+      opacity: 1;
+    }
+</style>
+</head>
+<body>
+
+  <h2 style="color: #181316;"><b>Customer Support</b></h2>
+  <p style="color: #2da986;">For any issues pertaining to purchases or orders, you may email us at kosuku04422@gmail.com. 
+In case of any questions, or anything that doesn’t take too long to solve/has us following procedure, you may shoot out customer service line below.</p>
+
+  <button class="open-button" onclick="openForm()">Open Form</button>
+
+  <div class="form-popup" id="myForm">
+    <form action="https://formspree.io/f/mnnvprrn" method="POST">
+      <h1>Ask Me!</h1>
+
+      <label for="email"><b>Email</b></label>
+      <input type="text" name="email" required>
+
+      <label for="question"><b>Questions</b></label>
+      <input type="text" name="question" required>
+
+      <button type="submit" class="btn">Send</button>
+      <button type="button" class="btn cancel" onclick="closeForm()">Cancel</button>
+    </form>
+  </div>
+
+  <script>
+    function openForm() {
+      document.getElementById("myForm").style.display = "block";
+    }
+
+    function closeForm() {
+      document.getElementById("myForm").style.display = "none";
+    }
+  </script>
+
+</body>
+</html>
