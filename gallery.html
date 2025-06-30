@@ -108,7 +108,7 @@ width: 20%;
 margin: 20px;
 }
 
-#vintage, #modern, #classic, #portable {
+#albums, #cds, #cassettes {
 display: flex;
   justify-content: center;
   align-items: center;
@@ -120,41 +120,33 @@ display: flex;
 <body>
 <img src="header.png" class="header-img">
 <div class="container">
-	<h1> Record Player Gallery </h1>
+	<h1> Product Gallery </h1>
 </div>
   <section>
     <ul>
 <li><a href="gallery.html"><button class="list"> All </button></a></li>
-<li><button class="list" onclick="show('vintage')"> Vintage Records</button></li>
-<li><button class="list" onclick="show('modern')"> Modern Records</button></li>
-<li><button class="list" onclick="show('classic')"> Classic Turntable</button></li>
-<li><button class="list" onclick="show('portable')"> Portable Records</button></li>
+<li><button class="list" onclick="show('albums')"> Albums </button></li>
+<li><button class="list" onclick="show('cds')">CDs </button></li>
+<li><button class="list" onclick="show('cassettes')"> Cassettes </button></li>
     </ul>
 </section>
 
 <div class="move">
-<div class="product" id="vintage">
-<img src="images/vintage1.jpg" id="item">
-<img src="images/vintage2.jpg" id="item">
-<img src="images/vintage3.jpg" id="item">
+<div class="product" id="albums">
+<img src="images/album1.png" id="item">
+<img src="images/album2.png" id="item">
+<img src="images/album3.png" id="item">
 </div>
 
-<div class="product" id="modern">
-<img src="images/modern1.jpg" id="item">
-<img src="images/modern2.jpg" id="item">
-<img src="images/modern3.jpg" id="item">
+<div class="product" id="cds">
+<img src="images/cd1.png" id="item">
+<img src="images/cd2.png" id="item">
+<img src="images/cd3.png" id="item">
 </div>
 
-<div class="product" id="classic">
-<img src="images/classic1.jpg" id="item">
-<img src="images/classic2.jpg" id="item">
-<img src="images/classic3.jpg" id="item">
-</div>
-
-<div class="product" id="portable">
-<img src="images/portable1.jpg" id="item">
-<img src="images/portable2.jpg" id="item">
-<img src="images/portable3.jpg" id="item">
+<div class="product" id="cassettes">
+<img src="images/cassette1.png" id="item">
+<img src="images/cassette2.png" id="item">
 </div>
 </div>
 
