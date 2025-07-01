@@ -15,6 +15,7 @@
     background: #181316; 
     font-family: 'Roboto', sans-serif;
     color: #FAFAFA; 
+    overflow-x: hidden;
   }
 
   .content {
@@ -49,9 +50,9 @@
     padding: 15px;
     display: block;
     margin: 10px 0 30px 0;
-    width: 900px;
+    width: 100%;
+    max-width: 900px;
     border-radius: 8px;
-
   }
 
   .audio-box {
@@ -86,7 +87,7 @@
 
   .button-container {
     text-align: left;
-    margin-left: -20px;
+    margin-left: 0;
   }
 
 .button:hover {
@@ -108,6 +109,13 @@ height: auto;
 
 #cd, .box {
 display: inline-block;
+}
+
+.header-img {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  display: block;
 }
 </style>
 </head>
