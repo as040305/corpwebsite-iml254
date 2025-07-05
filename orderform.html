@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html>
+<head>
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <meta charset="UTF-8">
+  <meta name="description" content="Order Form | Kosuku">
+  <meta name="keywords" content="kosuku, order form">
+  <meta name="author" content="Kosuku">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <title>ORDER</title>
+
+<style>
+    body {
+      font-family: 'Roboto', sans-serif;
+      padding: 0;
+      align-items: center;
+      background-color: #181316;
+    }
+    form {
+      max-width: 600px;
+      margin: auto;
+      margin-top: 25px;
+      padding: 20px;
+      background: #7F7F7F;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+    h1 {
+    text-align: center; 
+    color:#33160e;
+    background-color:#2da986;
+    padding: 0;
+    margin: auto;
+    }
+    label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: bold;
+    }
+    input, select, textarea, button {
+      width: 80%;
+      padding: 10px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+     form, .receipt {
+      max-width: 500px;
+      margin: auto;
+      background-color: #7F7F7F;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    .product, .field {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 15px;
+      align-items: center;
+    }
+
+    .product input[type="number"] {
+      width: 60px;
+      padding: 5px;
+    }
+
+    .total {
+      font-size: 18px;
+      font-weight: bold;
+      text-align: right;
+      margin-top: 20px;
+    }
+
+    select, button {
+      width: 100%;
+      padding: 10px;
+      font-size: 16px;
+    }
+
+    .bank-link {
+      margin-top: 10px;
+      text-align: center;
+    }
+
+    .bank-link a {
+      color: #007bff;
+      text-decoration: none;
+    }
+
+    .bank-link a:hover {
+      text-decoration: underline;
+    }
+
+    button {
+      background-color: #7a211e;
+      color: white;
+      border: none;
+      cursor: pointer;
+      transition-duration: 0.2s;
+    }
+    button:hover {
+      background-color: #2da986;
+    }
+    .receipt {
+      display: none;
+      margin-top: 30px;
+    }
+
+    .receipt h3 {
+      text-align: center;
+    }
+
+    .receipt-item {
+      display: flex;
+      justify-content: space-between;
+      margin: 5px 0;
+    }
+
+    @media print {
+      body * {
+        visibility: hidden;
+      }
+      .receipt, .receipt * {
+        visibility: visible;
+      }
+      .receipt {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+
+
+<body>
+<body style="background-color:#181316;">
+
+<img src="header.png" class="header-img">
+
+<h1>Record Player Order Form</h1>
+
+  <form id="orderForm">
+  <label for="name">Full Name:</label>
+  <input type="text" id="name" name="name" placeholder="Enter your full name" required>
+
+  <label for="email">Email Address:</label>
+  <input type="email" id="email" name="email" placeholder="Enter your email" required>
+
+  <label for="phone">Phone Number:</label>
+  <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" required>
+
+  <label for="model">Select Record Player Model:</label>
+  <div class="product">
+      <label>Album (RM65)</label>
+      <input type="number" min="0" value="0" data-price="65" data-name="Album">
+    </div>
+
+    <div class="product">
+      <label>CDs (RM50)</label>
+      <input type="number" min="0" value="0" data-price="50" data-name="CDs">
+    </div>
+
+    <div class="product">
+      <label>Cassettes (RM80)</label>
+      <input type="number" min="0" value="0" data-price="80" data-name="Cassettes">
+    </div>
+
+    <div class="total">Total: RM<span id="total">0.00</span></div>
+
+    <div class="field">
+      <label for="paymentMethod">Choose Payment Method:</label>
+      <select id="paymentMethod" required>
+        <option value="">-- Select Bank --</option>
+        <option value="maybank">Maybank</option>
+        <option value="cimb">CIMB Bank</option>
+        <option value="rhb">RHB Bank</option>
+      </select>
+    </div>
+
+    <div class="bank-link" id="bankLink" style="display: none;">
+      <a href="#" target="_blank" id="bankUrl">Go to bank website</a>
+    </div>
+
+    <button type="submit">Place Order</button>
+  </form>
+
+    <!-- Receipt -->
+  <div class="receipt" id="receipt">
+    <h3>Order Receipt</h3>
+    <div id="receiptItems"></div>
+    <div class="receipt-item"><strong>Total:</strong> $<span id="receiptTotal">0.00</span></div>
+    <div class="receipt-item"><strong>Payment Method:</strong> <span id="receiptBank"></span></div>
+    <button onclick="window.print()">Print Receipt</button>
+  </div>
+
+  <script>
+    const inputs = document.querySelectorAll('input[type="number"]');
+    const totalDisplay = document.getElementById('total');
+    const paymentMethod = document.getElementById('paymentMethod');
+    const bankLinkDiv = document.getElementById('bankLink');
+    const bankUrl = document.getElementById('bankUrl');
+
+    const receipt = document.getElementById('receipt');
+    const receiptItems = document.getElementById('receiptItems');
+    const receiptTotal = document.getElementById('receiptTotal');
+    const receiptBank = document.getElementById('receiptBank');
+
+    const bankWebsites = {
+      maybank: 'https://www.maybank2u.com.my/',
+      cimb: 'https://www.cimbclicks.com.my/',
+      rhb: 'https://logon.rhb.com.my/'
+    };
+
+    function calculateTotal() {
+      let total = 0;
+      inputs.forEach(input => {
+        const price = parseFloat(input.getAttribute('data-price'));
+        const qty = parseInt(input.value) || 0;
+        total += price * qty;
+      });
+      totalDisplay.textContent = total.toFixed(2);
+    }
+
+    inputs.forEach(input => {
+      input.addEventListener('input', calculateTotal);
+    });
+
+    paymentMethod.addEventListener('change', function () {
+      const selectedBank = paymentMethod.value;
+      if (bankWebsites[selectedBank]) {
+        bankUrl.href = bankWebsites[selectedBank];
+        bankLinkDiv.style.display = 'block';
+      } else {
+        bankLinkDiv.style.display = 'none';
+      }
+    });
+
+    document.getElementById('orderForm').addEventListener('submit', function (e) {
+      e.preventDefault();
+      if (paymentMethod.value === "") {
+        alert("Please select a payment method.");
+        return;
+      }
+
+
+      // Prepare receipt
+      receiptItems.innerHTML = '';
+      let total = 0;
+      inputs.forEach(input => {
+        const qty = parseInt(input.value);
+        const name = input.getAttribute('data-name');
+        const price = parseFloat(input.getAttribute('data-price'));
+
+        if (qty > 0) {
+          const itemTotal = qty * price;
+          total += itemTotal;
+
+          const itemDiv = document.createElement('div');
+          itemDiv.classList.add('receipt-item');
+          itemDiv.innerHTML = `<span>${name} (x${qty})</span><span>$${itemTotal.toFixed(2)}</span>`;
+          receiptItems.appendChild(itemDiv);
+        }
+      });
+
+      receiptTotal.textContent = total.toFixed(2);
+      receiptBank.textContent = paymentMethod.options[paymentMethod.selectedIndex].text;
+      receipt.style.display = 'block';
+
+      alert("Order submitted! Scroll down to view and print your receipt.");
+    });
+  </script>
+
+
+
+<footer>
+©2025 Kosuku | All Rights Reserved<br>
+Last updated: 29 June 2025<br>
+Best viewed on a PC browser<br>
+This website is fake and made for learning purposes only.<br>
+Kosuku and the information on this website is not real.
+</footer>
+</body>
+</html>
+
+
+
+
